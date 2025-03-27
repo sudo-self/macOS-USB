@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>macOS Create Install Media Commands</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link rel="icon" href="/favicon.ico" sizes="any">
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body class="bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900 text-white flex flex-col items-center justify-between min-h-screen p-6">
+    <div class="w-full max-w-3xl space-y-8">
+        <h1 class="text-3xl font-bold text-center">macOS USB Installers</h1>
+        <p class="text-center text-gray-300">Connect the USB flash drive to your Mac. Open Terminal (Applications > Utilities > Terminal).<br /> Use one of the following commands, replacing <span class="font-bold text-pink-300">MyVolume</span> with your USB name.</p>
+        <img src='./icon.png' width="90px" height="auto" class="mx-auto mb-4" />
+        <select id="commandDropdown" class="w-full p-2 rounded bg-gray-800 text-white" onchange="updateCommand()">
+            <option value="">Select macOS Version</option>
+            <option value="sudo /Applications/Install\ macOS\ Sequoia.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Sequoia</option>
+            <option value="sudo /Applications/Install\ macOS\ Sonoma.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Sonoma</option>
+            <option value="sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Ventura</option>
+            <option value="sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Monterey</option>
+            <option value="sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Big Sur</option>
+            <option value="sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Catalina</option>
+            <option value="sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">Mojave</option>
+            <option value="sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume">High Sierra</option>
+            <option value="sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app">El Capitan</option>
+        </select>
+        <div class="mt-4 flex items-center justify-between bg-gray-800 p-3 rounded">
+            <span id="selectedCommand" class="text-sm md:text-base font-mono">Select a macOS version</span>
+            <button onclick='copyToClipboard(document.getElementById("selectedCommand").textContent)' class='bg-indigo-400 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded'>Copy</button>
+        </div>
+
+        <h2 class="text-2xl font-bold">Windows USB installers</h2>
+        <p>write the iso to the USB then extract the drivers folder to the root</p>
+        <div class="grid gap-4">
+            <div class="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="./windisk.png" class="w-12 h-12">
+                    <span class="text-lg font-semibold">WinDiskWriter</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1Q4_2qglKpBDtLb6aW9U3izOE4a7g36RL/view?usp=share_link" download class="bg-indigo-400 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded">Download</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="./windows.png" class="w-12 h-12">
+                    <span class="text-lg font-semibold">Windows 10</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1c_wze6SvBVQia3xVuWng0MXv1nIWUrmT/view?usp=share_link" download class="bg-indigo-400 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded">Torrent</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="./bootcamp.png" class="w-12 h-12">
+                    <span class="text-lg font-semibold">Boot Camp</span>
+                </div>
+                <a href="https://drive.google.com/file/d/10F54apbM7pBFz189OD7s_pta88p7e7t0/view?usp=share_link" download class="bg-gray-200 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded">Drivers</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <h2 class="text-2xl font-bold"><img src="https://img.shields.io/badge/format-USB-black" alt="Badge Preview"></h2><br />
+                <ul class="text-gray-300 list-disc list-inside">
+                    <li><strong>Apple File System (APFS)&nbsp;</strong>macOS 10.13 or later.</li>
+                    <li><strong>Mac OS Extended&nbsp;</strong>macOS 10.12 or earlier.</li>
+                    <li><strong>MS-DOS&nbsp;</strong>32 GB or less.</li>
+                    <li><strong>ExFAT&nbsp;</strong>over 32 GB.</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold"><img src="https://img.shields.io/badge/dd-Terminal-black" alt="Badge Preview"></h2><br />
+                <ul class="text-gray-300 list-disc list-inside">
+                    <li><strong>dd&nbsp;</strong>command line utility</li>
+                    <li><strong>if&nbsp;</strong>path to image</li>
+                    <li><strong>of&nbsp;</strong>path to disk</li>
+                    <li><strong>bs&nbsp;</strong>block size</li>
+                    <li><strong>status=progress&nbsp;</strong>verbose</li>
+                </ul>
+            </div>
+        </div><br />
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <h2 class="text-2xl font-bold">
+              <img src="https://img.shields.io/badge/windows%20installer%20-USB-black" alt="Badge Preview">
+            </h2><br />
+            <ul class="text-gray-300 list-disc list-inside space-y-1">
+              <li class="whitespace-nowrap">diskutil list</li>
+              <li class="whitespace-nowrap">diskutil eraseDisk ExFAT "WindowsUSB" GPT /dev/diskX</li>
+              <li class="whitespace-nowrap">hdiutil mount /path/to/windows.iso</li>
+              <li class="whitespace-nowrap">cp -R /Volumes/Install_Windows/* /Volumes/WindowsUSB</li>
+              <li class="whitespace-nowrap">cp -R /Downloads/BootCamp/Drivers/* /Volumes/WindowsUSB</li>
+            </ul>
+          </div>
+        </div>
+
+        </div><br />
+
+            <div id="toast" class="hidden fixed bottom-4 right-4 bg-pink-400 text-white px-4 py-2 rounded shadow-lg">Copied to clipboard!</div>
+
+    <script>
+        function copyToClipboard(command) {
+            navigator.clipboard.writeText(command).then(() => {
+                const toast = document.getElementById("toast");
+                toast.classList.remove("hidden");
+                setTimeout(() => toast.classList.add("hidden"), 2000);
+            }).catch(err => console.error('Error copying text: ', err));
+        }
+        function updateCommand() {
+            const dropdown = document.getElementById("commandDropdown");
+            document.getElementById("selectedCommand").textContent = dropdown.value || "Select a macOS version";
+        }
+    </script>
+</body>
+
+
+<footer class="bg-gray-800 text-white text-center py-4 w-full">
+install on mac holding option⌥ + power and selecting the EFI startup disk
+</footer>
+
+</html>
+
+
+
