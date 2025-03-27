@@ -1,0 +1,10 @@
+xyz.jessejesse.usb.twa.app-pngs-0 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/build/generated/res/pngs/release
+xyz.jessejesse.usb.twa.app-resValues-1 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/build/generated/res/resValues/release
+xyz.jessejesse.usb.twa.app-packageReleaseResources-2 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+xyz.jessejesse.usb.twa.app-packageReleaseResources-3 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+xyz.jessejesse.usb.twa.app-release-4 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/build/intermediates/merged_res/release/mergeReleaseResources
+xyz.jessejesse.usb.twa.app-main-5 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/src/main/res
+xyz.jessejesse.usb.twa.app-release-6 /Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/src/release/res
+xyz.jessejesse.usb.twa.app-core-1.1.0-7 /private/var/root/.gradle/caches/8.8/transforms/2144911bb09dce3a07f407e3b390637e/transformed/core-1.1.0/res
+xyz.jessejesse.usb.twa.app-browser-1.4.0-8 /private/var/root/.gradle/caches/8.8/transforms/b511174c15fdde7dea3e957094b4390b/transformed/browser-1.4.0/res
+xyz.jessejesse.usb.twa.app-androidbrowserhelper-2.5.0-9 /private/var/root/.gradle/caches/8.8/transforms/d3335fbdff4200978ad121d7b141def7/transformed/androidbrowserhelper-2.5.0/res

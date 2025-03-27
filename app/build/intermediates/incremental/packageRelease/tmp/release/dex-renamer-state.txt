@@ -1,0 +1,4 @@
+#Thu Mar 27 15:17:16 MDT 2025
+base.0=/Users/jesseroper/Desktop/untitled folder 3/macOS-USB/app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
